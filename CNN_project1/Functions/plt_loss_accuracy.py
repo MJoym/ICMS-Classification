@@ -128,7 +128,7 @@ def plot_roc(fpr, tpr, p_fpr, p_tpr):
     plt.ylabel('True Positive rate')
 
     plt.legend(loc='best')
-    plt.savefig('ROC_model1_pred_probs3.png', dpi=300)
+    plt.savefig('ROC_model1.png', dpi=300)
     plt.show()
 
 
