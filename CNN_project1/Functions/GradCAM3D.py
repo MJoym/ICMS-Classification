@@ -22,9 +22,7 @@ def interpolate_heatmap(img_path, original_heatmap):
     img = cv2.imread(img_path)
     original_heatmap_np = original_heatmap.numpy()
     heatmap = cv2.resize(original_heatmap_np, (img.shape[1], img.shape[0]))
-    # plt.matshow(heatmap)
     heatmap = np.uint8(255*heatmap)
-    # plt.matshow(heatmap)
     heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
     superimposed_img = heatmap * 0.8 + img * 0.7
 
@@ -74,18 +72,13 @@ def GradCam(model, test_dl):
 
             # average the channels of the activations
             heatmap = torch.mean(activations, dim=[1,2]).squeeze()
-            # plt.matshow(heatmap)
 
             # relu on top of the heatmap
             # expression (2) in https://arxiv.org/pdf/1610.02391.pdf
             heatmap = np.maximum(heatmap, 0)
-            # heatmap = np.minimum(heatmap, 0)
-            # plt.matshow(heatmap)
 
             # normalize the heatmap
             heatmap /= torch.max(heatmap)
-            # heatmap /= torch.min(heatmap)
-            # plt.matshow(heatmap)
 
             # Interpolation of image and heatmap:
             imgPath = path_of_bkg_img
