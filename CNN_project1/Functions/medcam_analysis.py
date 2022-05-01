@@ -1,3 +1,5 @@
+"""Function that implements Grad-CAM using med-cam"""
+
 import torch
 from medcam import medcam
 import torch.nn.functional as F
@@ -47,7 +49,7 @@ def medcam_analysis(model, test_dataloader):
         # calculate the number of correct predictions
         pred_t = pred_test.argmax(1)
 
-        # filep = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Functions/attention_maps/2503_c_2009/max3/attention_map_0_0_0.nii'
+        # filep = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Functions/attention_maps/2503_c_2009/max3/attention_map_0_0_0.nii'
         if path.isdir(create_new_dir):
             file_path = create_new_dir+'/max3/attention_map_0_0_0.nii.gz'
 
@@ -58,16 +60,8 @@ def medcam_analysis(model, test_dataloader):
         test_load = nib.load(file_path).get_fdata()
         print(test_load.shape)
 
-        # for i in range(2):
-        #     plt.subplot(2, 2,i + 1)
-        #     plt.imshow(test_load[:,:,0 + i])
-        #     plt.gcf().set_size_inches(10, 10)
-        # plt.show()
-
         # average the channels of the activations
         heatmap = torch.from_numpy(test_load)
         heatmap = torch.mean(heatmap, dim=[2]).squeeze()
-        # draw the heatmap
-        # plt.matshow(heatmap)
-        # plt.show()
+      
         interpolate_heatmap(path_of_bckg_img, heatmap)
