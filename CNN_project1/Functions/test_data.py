@@ -9,8 +9,8 @@ from Functions.plt_loss_accuracy import plot_confusion_mat, build_confusion_mat,
 
 
 # Paths for files that will be saved in script
-path2saveCM = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/100Epochs/SGD_Model/FinalTestConfusionMat_45epochs_SGD1.png'
-path2saveROC = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/100Epochs/SGD_Model/Final_TEST_ROC_45epochs_SGD1.png'
+path2saveCM = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Modelsaved/SGD_Model/FinalTestConfusionMat_45epochs_SGD.png'
+path2saveROC = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Modelsaved/SGD_Model/FinalTest_ROC_45epochs_SGD.png'
 
 
 def test(model, test_dl):
