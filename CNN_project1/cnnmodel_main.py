@@ -25,7 +25,7 @@ test_batch_size = 32
 epochs = 100 # Total epochs to run the training
 
 # Train and test data directory
-dataset_dir = "/media/joy/Elements/Joanna/ICMS/python scripts for neural network course/CNN/Labels"
+dataset_dir = "/media/joy/Elements/Joanna/ICMS/CNN/Labels"
 
 # Load the train and test data:
 dataset = ICMSet(dataset_dir, transform=transforms.ToTensor())
@@ -69,7 +69,7 @@ lossFn = nn.CrossEntropyLoss()
 
 # Time how long the training takes:
 startTime = time.time()
-filepath = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/100Epochs/ADAM_Model/the_model_60_checkp.pt'
+filepath = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/ADAM_Model/final_model.pt'
 
 # Loop over gradient steps (eta):
 for eta in etas:
@@ -90,7 +90,7 @@ for eta in etas:
     plot_pred(H)
 
     # Save training history:
-    pickle.dump(H, open("TrainingHistoryVar_SGD.dat", "wb"))
+    pickle.dump(H, open("TrainingHistoryVar.dat", "wb"))
 
     # Test the model:
     T = test(model, test_dl)
