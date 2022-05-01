@@ -69,7 +69,7 @@ lossFn = nn.CrossEntropyLoss()
 
 # Time how long the training takes:
 startTime = time.time()
-filepath = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/ADAM_Model/final_model.pt'
+filepath = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Model saved/ADAM_Model/final_model.pt'
 
 # Loop over gradient steps (eta):
 for eta in etas:
