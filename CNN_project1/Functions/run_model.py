@@ -19,13 +19,13 @@ import matplotlib.pyplot as plt
 
 # test_batch_size = 1
 # # define a 1 image dataset
-# dataset_dir = "/media/joy/Elements/Joanna/ICMS/python scripts for neural network course/CNN/GradCam_Labels"
+# dataset_dir = "/media/joy/Elements/Joanna/ICMS/CNN/GradCam_Labels"
 #
 # # Load the train and test data:
 # dataset = ICMSet(dataset_dir, transform=transforms.ToTensor())
 # test_dl = DataLoader(dataset, test_batch_size, num_workers=0, shuffle=False, pin_memory=False)
 # print("\nthe_model with GradCAM:")
-# pathf = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/100Epochs/ADAM_Model/the_model_60.pt'
+# pathf = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Modelsaved/ADAM_Model/the_model_60.pt'
 # the_model = V1_3DCNN(numChannels=1, numLabels=2)
 # the_model.load_state_dict(torch.load(pathf))
 # the_model.eval()
@@ -56,7 +56,7 @@ test_batch_size = 32
 # epochs = 25  # Total epochs to run the training
 
 # Train and test data directory
-dataset_dir = "/media/joy/Elements/Joanna/ICMS/python scripts for neural network course/CNN/Labels"
+dataset_dir = "/media/joy/Elements/Joanna/ICMS/CNN/Labels"
 
 # Load the train and test data:
 dataset = ICMSet(dataset_dir, transform=transforms.ToTensor())
@@ -86,7 +86,7 @@ print(f"Length of Test Data : {len(test_data)}")
 test_dl = DataLoader(test_data, test_batch_size, shuffle=False, num_workers=0, pin_memory=False)
 print("\nthe_model saved (TESTING):")
 
-pathf = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/100Epochs/ADAM_Model/the_model_60.pt'
+pathf = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Model saved/ADAM_Model/the_model_60.pt'
 the_model = V1_3DCNN(numChannels=1, numLabels=2)
 the_model.load_state_dict(torch.load(pathf))
 the_model.eval()
