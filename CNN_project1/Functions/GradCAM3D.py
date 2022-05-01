@@ -1,4 +1,4 @@
-""" GradCam implementation by Joanna Molad F. based on Medium article by Stepan Ulyanin "Implementing Grad-CAM in PyTorch".
+""" GradCam implementation by J.M.F. based on Medium article by Stepan Ulyanin "Implementing Grad-CAM in PyTorch".
 Works only with one sample at a time. Please use folder "GradCAM Label" for this script."""
 import torch
 import torch.nn.functional as F
