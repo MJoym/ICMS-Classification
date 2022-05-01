@@ -4,7 +4,7 @@ The goal for this project is to determine whether there was an electrical stimul
 
 References:
 1. [Rosebrock, A. (2021, July 19). Pytorch: Training your first Convolutional Neural Network (CNN), pyimagesearch][1]  \
-2. [Ulyanin, S. (20219, Feb 22). Implementing Grad-CAM in PyTorch, Medium][2] 
+2. [Ulyanin, S. (2019, Feb 22). Implementing Grad-CAM in PyTorch, Medium][2] 
 3. [CS231 - CNN for Visual Recognition][3]  
 4. Selvaraju, R. R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., & Batra, D. (2016). Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization. https://doi.org/10.1007/s11263-019-01228-7
 5. [med-cam][4]
