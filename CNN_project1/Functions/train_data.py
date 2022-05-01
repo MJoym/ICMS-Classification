@@ -15,24 +15,26 @@ def train(model, train_dl, val_dl, epochs, start_epoch, loss, opt):
 
     # initialize a dictionary to store training history
     history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": [], "y_true": [], "y_pred": [], "class1_probs": []}
-    checkpoints = 1  # Every 5 epochs save the model
-    model_num = 60  # Parameter to save the model every 5 epochs
+    checkpoints = 5  # Every 5 epochs save the model
+    model_num = 5  # Parameter to save the model every 5 epochs
 
     #Loops over epochs:
     for epoch in range(start_epoch, epochs):
 
         model.train()
+        
         totalTrainLoss = []
         totalValLoss = []
         trainCorrect = 0
         valCorrect = 0
 
         # Paths for files that will be saved in script
-        path2saveCheckp = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/100Epochs/ADAM_Model/the_model_'+str(model_num)+'_checkp.pt'
-        path2saveModel = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/100Epochs/ADAM_Model/the_model_'+str(model_num)+'.pt'
-        path2saveCM = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/100Epochs/ADAM_Model/ConfusionMat_'+str(model_num)+'.png'
-        path2saveROC = '/home/joy/Documents/Neuroscience Master/Neural Networks/CNN_project1/Model saved/100Epochs/ADAM_Model/ROC_'+str(model_num)+'.png'
-
+        path2saveCheckp = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Modelsaved/ADAM_Model/the_model_'+str(model_num)+'_checkp.pt'
+        path2saveModel = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Modelsaved/ADAM_Model/the_model_'+str(model_num)+'.pt'
+        path2saveCM = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Modelsaved/ADAM_Model/ConfusionMat_'+str(model_num)+'.png'
+        path2saveROC = '/home/joy/Documents/Neuroscience_Master/Neural_Networks/CNN_project1/Modelsaved/ADAM_Model/ROC_'+str(model_num)+'.png'
+        
+        # Parameters for the ROC-AUC:
         y_true = []
         y_pred = []
         y_pred_prob = []
